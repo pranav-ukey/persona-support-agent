@@ -45,15 +45,23 @@ Return the output in JSON format.
         ]
     }
 
-    response = client.models.generate_content(
-        model="gemini-2.5-flash-lite",
-        contents=user_message,
-        config=types.GenerateContentConfig(
-            system_instruction=system_instruction,
-            response_mime_type="application/json",
-            response_schema=response_schema,
-            temperature=0.1
+    try:
+        response = client.models.generate_content(
+            model="gemini-2.5-flash-lite",
+            contents=user_message,
+            config=types.GenerateContentConfig(
+                system_instruction=system_instruction,
+                response_mime_type="application/json",
+                response_schema=response_schema,
+                temperature=0.1
+            )
         )
-    )
 
-    return json.loads(response.text)
+        return json.loads(response.text)
+
+    except Exception:
+        return {
+            "persona": "Business Executive",
+            "confidence": 0.0,
+            "reasoning": "Gemini service unavailable."
+        }

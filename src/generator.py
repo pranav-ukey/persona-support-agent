@@ -48,24 +48,34 @@ Provide:
 Avoid technical jargon.
 """
 
-    response = client.models.generate_content(
-        model="gemini-2.5-flash-lite",
-        contents=f"""
-    Knowledge Base Context:
+    try:
+        response = client.models.generate_content(
+            model="gemini-2.5-flash-lite",
+            contents=f"""
+        Knowledge Base Context:
 
-    {context}
+        {context}
 
-    User Query:
+        User Query:
 
-    {user_query}
+        {user_query}
 
-    Answer only using the information provided above.
-    If the answer is not present, say that the issue should be escalated to a human support agent.
-    """,
-        config={
-            "system_instruction": persona_instruction,
-            "temperature": 0.2
-        }
-    )
+        Answer only using the information provided above.
+        If the answer is not present, say that the issue should be escalated to a human support agent.
+        """,
+            config={
+                "system_instruction": persona_instruction,
+                "temperature": 0.2
+            }
+        )
 
-    return response.text
+        return response.text
+
+    except Exception:
+        return (
+            "The AI service is temporarily unavailable.\n\n"
+            "Possible reasons:\n"
+            "- Gemini API quota exceeded.\n"
+            "- Gemini servers are busy.\n\n"
+            "Please try again later."
+        )
