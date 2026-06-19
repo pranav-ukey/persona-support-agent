@@ -47,7 +47,7 @@ Return the output in JSON format.
 
     try:
         response = client.models.generate_content(
-            model="gemini-2.5-flash-lite",
+            model="gemini-2.0-flash-lite",
             contents=user_message,
             config=types.GenerateContentConfig(
                 system_instruction=system_instruction,
