@@ -76,16 +76,23 @@ class LocalRAGPipeline:
         return self.chunks
 
     def get_embedding(self, text):
-        response = self.client.models.embed_content(
-            model="gemini-embedding-001",
-            contents=text
-        )
+        try:
+            response = self.client.models.embed_content(
+                model="gemini-embedding-001",
+                contents=text
+            )
 
-        return response.embeddings[0].values  
+            return response.embeddings[0].values
+
+        except Exception:
+            return None
 
     def ingest_chunks(self):
         for chunk in self.chunks:
             embedding = self.get_embedding(chunk["text"])
+
+            if embedding is None:
+                continue
 
             chunk_id = (
                 f"{chunk['source']}_{chunk['chunk_index']}"
@@ -101,7 +108,7 @@ class LocalRAGPipeline:
                         "chunk_index": chunk["chunk_index"]
                     }
                 ]
-            )    
+            )
 
     def retrieve(self, query, top_k=3):
         query_embedding = self.get_embedding(query)
