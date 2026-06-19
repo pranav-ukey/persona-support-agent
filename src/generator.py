@@ -50,7 +50,7 @@ Avoid technical jargon.
 
     try:
         response = client.models.generate_content(
-            model="gemini-2.0-flash-lite",
+            model="gemini-2.0-flash",
             contents=f"""
         Knowledge Base Context:
 
