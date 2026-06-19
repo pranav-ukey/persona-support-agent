@@ -1,0 +1,13 @@
+API Authentication Troubleshooting
+
+401 Unauthorized errors usually occur when:
+
+- API key is invalid.
+- Bearer token is missing.
+- Authorization header is malformed.
+
+Example:
+
+Authorization: Bearer YOUR_API_KEY
+
+Verify that the token has not expired.

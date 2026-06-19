@@ -1,0 +1,8 @@
+Browser Cache Troubleshooting
+
+1. Open browser settings.
+2. Clear cache and cookies.
+3. Restart the browser.
+4. Reload the application.
+
+Supported browsers include Chrome, Edge, Firefox, and Safari.
