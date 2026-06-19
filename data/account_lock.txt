@@ -1,0 +1,5 @@
+Account Lock Information
+
+Accounts may be locked after multiple failed login attempts.
+
+Wait 30 minutes or contact support.

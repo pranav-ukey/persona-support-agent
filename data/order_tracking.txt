@@ -1,0 +1,7 @@
+Order Tracking
+
+1. Open Orders.
+2. Select the order.
+3. Click Track Shipment.
+
+Tracking information is updated every 24 hours.

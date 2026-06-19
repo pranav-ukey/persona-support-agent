@@ -1,0 +1,9 @@
+Database Error Troubleshooting
+
+Common causes:
+
+- Connection timeout
+- Invalid credentials
+- Database server unavailable
+
+Verify connection settings and restart the service.

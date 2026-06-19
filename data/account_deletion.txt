@@ -1,0 +1,8 @@
+Account Deletion Guide
+
+1. Open account settings.
+2. Select Delete Account.
+3. Confirm your password.
+4. Submit the request.
+
+Deleted accounts cannot be restored.

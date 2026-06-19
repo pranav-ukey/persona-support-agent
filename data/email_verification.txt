@@ -1,0 +1,7 @@
+Email Verification Guide
+
+1. Open your inbox.
+2. Click the verification link.
+3. Log in again.
+
+Check the spam folder if the email is missing.

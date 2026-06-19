@@ -1,5 +1,6 @@
 import chromadb
 from google import genai
+from pypdf import PdfReader
 
 from src.config import GEMINI_API_KEY
 
@@ -31,14 +32,33 @@ class LocalRAGPipeline:
     def load_documents(self):
         data_folder = Path("data")
 
+        # Load TXT files
         for file in data_folder.glob("*.txt"):
             with open(file, "r", encoding="utf-8") as f:
                 text = f.read()
 
-                self.documents.append({
+                self.documents.append(
+                    {
+                        "source": file.name,
+                        "content": text
+                    }
+                )
+
+        # Load PDF files
+        for file in data_folder.glob("*.pdf"):
+            reader = PdfReader(file)
+
+            text = ""
+
+            for page in reader.pages:
+                text += page.extract_text()
+
+            self.documents.append(
+                {
                     "source": file.name,
                     "content": text
-                })
+                }
+            )
 
         return self.documents
 

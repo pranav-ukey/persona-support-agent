@@ -1,0 +1,9 @@
+Billing Support
+
+If a payment fails:
+
+1. Verify card information.
+2. Ensure sufficient balance.
+3. Retry the transaction.
+
+Contact billing support if the issue persists.

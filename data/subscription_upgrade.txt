@@ -1,0 +1,5 @@
+Subscription Upgrade
+
+Users can upgrade their subscription from the Billing page.
+
+Changes become effective immediately after successful payment.

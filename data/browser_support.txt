@@ -1,0 +1,10 @@
+Supported Browsers
+
+The application supports:
+
+- Chrome
+- Edge
+- Firefox
+- Safari
+
+Update your browser to the latest version.
