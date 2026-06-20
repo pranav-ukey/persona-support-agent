@@ -71,11 +71,12 @@ Avoid technical jargon.
 
         return response.text
 
-    except Exception:
-        return (
-            "The AI service is temporarily unavailable.\n\n"
-            "Possible reasons:\n"
-            "- Gemini API quota exceeded.\n"
-            "- Gemini servers are busy.\n\n"
-            "Please try again later."
-        )
+    except Exception as e:
+        return f"""
+    The AI service is temporarily unavailable.
+
+    Actual error:
+    {str(e)}
+
+    Please try again later.
+    """
