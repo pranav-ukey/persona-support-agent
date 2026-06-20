@@ -15,8 +15,7 @@ rag.load_documents()
 rag.chunk_documents()
 
 # Store embeddings only once
-if rag.collection.count() == 0:
-    rag.ingest_chunks()
+
 
 
 st.title("Persona-Adaptive Customer Support Agent")
